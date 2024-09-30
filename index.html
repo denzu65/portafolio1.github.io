@@ -77,20 +77,24 @@
                 <h2 class="titulo-seccion">CONTACTAME</h2>
                 <div class="subtitulo-seccion claro-txt">Envíame un mensaje ahora</div>
                 <div class="formulario">
-                    <form action="">
-                        <input type="text" placeholder="Nombre">
-                        <input type="text" placeholder="Email">
-                        <input type="text" placeholder="Tema">
-                        <textarea name="" id="" cols="" rows="" placeholder="Mensaje"></textarea>
-                        <button>Enviar Mensaje</button>
+                    <form action="https://formsubmit.co/idenkai.277@gmail.com" method="POST" onsubmit="submitForm(event)">
+                        <input type="text" name="name" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="subject" placeholder="Asunto" required>
+                        <textarea name="coments" cols="30" rows="5" placeholder="Mensaje" required></textarea>
+                        <button type="submit">Enviar Mensaje</button>
+                        <input type="hidden" name="_next" value="https://denzu65.github.io/portafolio1.github.io/">
+                        <input type="hidden" name="_captcha" value="false">
                     </form>
+                    <div id="popupMessage" class="popup hidden">
+                        <p id="popupText"></p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
     <canvas id="canvas"></canvas>
     <script src="script.js"></script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </body>
 
 </html>

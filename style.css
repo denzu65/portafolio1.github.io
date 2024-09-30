@@ -260,6 +260,29 @@ header nav a:hover {
     font-size: 24px;
     margin: 20px 0;
 }
+.popup {
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    background-color: rgba(24, 3, 3, 0.388);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    display: none; 
+}
+.popup .success{
+    color: green;
+}
+.popup .error{
+    color: red;
+}
+.popup .info{
+    color: skyblue;
+}
+.popup.visible {
+    display: block; 
+}
 
 /* SECCION RESPONSIVE */
 @media screen and (max-width: 740px) {

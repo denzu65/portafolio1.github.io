@@ -1,29 +1,3 @@
-// Agrega la clase selected y filtra productos
-document.querySelectorAll('.filter').forEach(function (filter) {
-    filter.addEventListener('click', function (e) {
-        // Agrego la clase selected
-        e.target.classList.add("selected");
-
-        // Tomo el id que selecciono
-        var clase = e.target.id;
-        let productos = document.querySelectorAll('.item-producto'); // Asegúrate de que esto apunte a tus productos
-
-        if (clase == "todos") {
-            productos.forEach(function (prod) {
-                prod.style.display = "block";
-            });
-        } else {
-            productos.forEach(function (prod) {
-                if (prod.classList.contains(clase)) {
-                    prod.style.display = "block";
-                } else {
-                    prod.style.display = "none";
-                }
-            });
-        }
-    });
-});
-
 // Inicialización del canvas
 let c = init("canvas"),
     w = (canvas.width = window.innerWidth),
@@ -112,44 +86,44 @@ window.addEventListener("resize", function () {
 // Iniciar la animación
 loop();
 
-const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+//enviar mensaje
+function submitForm(event) {
+    event.preventDefault(); 
+    const statusMessage = document.getElementById('popupMessage');
+    const popupText = document.getElementById('popupText');
+    const form = event.target; 
 
-const app = express();
-const port = 3000;
+    popupText.textContent = "Enviando mensaje...";
+    statusMessage.classList.add('visible');
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+    const formData = new FormData(form);
 
-const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: 'tuemail@gmail.com', // Tu correo
-        pass: '' // Tu contraseña o token de aplicación
-    }
-});
-
-app.post('/send-email', (req, res) => {
-    const { name, email, subject, message } = req.body;
-
-    const mailOptions = {
-        from: email,
-        to: 'pepito@gmail.com', // Destinatario
-        subject: subject,
-        text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return res.status(500).send(error.toString());
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            popupText.textContent = "¡Mensaje enviado con éxito!";
+            popupText.style.color = "green";
+            form.reset(); 
+        } else {
+            throw new Error('Error al enviar el mensaje.');
         }
-        res.status(200).send('Mensaje enviado exitosamente!');
-    });
-});
+    })
+    .catch(error => {
+        popupText.textContent = "Error al enviar el mensaje. Inténtalo de nuevo.";
+        popupText.style.color = "red";
+    })
+    .finally(() => {
+        statusMessage.classList.add('visible');
 
-app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
-});
+        setTimeout(() => {
+            statusMessage.classList.remove('visible');
+        }, 3000);
+    });
+}
+
+document.getElementById('popupMessage').onclick = function() {
+    this.classList.remove('visible');
+};
