@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>ALEX Z</title>
+</head>
+
+<body>
+    <!-- ENCABEZADO -->
+    <header>
+        <nav>
+            <a href="#sobremi" data-section="sobre-mi">Sobre mí</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <!-- SECCION SOBRE MI -->
+        <div id="sobremi"></div>
+        <section class="sobremi glass">
+            <div class="contenido-seccion">
+                <h2 class="titulo-seccion">SOBRE MI</h2>
+                <div class="subtitulo-seccion">Estudiante en Ingenieria de Software</div>
+                <p>¡Hola! Soy Alex Zuna, un estudiante entusiasta de Ingeniería de Software. Apasionado por la
+                    tecnología y la programación. Actualmente, me especializo en desarrollo web y diseño de sistemas,
+                    buscando siempre innovar y resolver problemas a través del software. Me encanta trabajar en
+                    proyectos desafiantes y aprender de cada experiencia. ¡Gracias por visitar mi portafolio!</p>
+                <div class="lenguajes-uso">
+                    <h3>Lenguajes que uso</h3>
+                    <div class="iconos-lenguajes">
+                        <i class="fa-brands fa-html5 icon-html"></i>
+                        <i class="fa-brands fa-css3-alt icon-css"></i>
+                        <i class="fa-brands fa-js icon-js"></i>
+                        <i class="fa-brands fa-java icon-java"></i>
+                    </div>
+                    <div class="nombres-lenguajes">
+                        <div>HTML</div>
+                        <div>CSS</div>
+                        <div>JavaScript</div>
+                        <div>Java</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION PORTFOLIO -->
+        <div id="portfolio"></div>
+        <section class="portfolio glass">
+            <div class="contenido-seccion">
+                <h2 class="titulo-seccion">PORTFOLIO</h2>
+                <div class="subtitulo-seccion">EXPLORA MIS TRABAJOS</div>
+                <a href="https://github.com/denzu65" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <div class="productos" id="productos">
+                    <div class="item-producto disenio">
+                        <img src="img/ENPROCESO.jpg" alt="">
+                        <div class="info">
+                            <h3>En Proceso</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION CONTACTO -->
+        <div id="contacto"></div>
+        <section class="contacto glass">
+            <div class="contenido-seccion">
+                <h2 class="titulo-seccion">CONTACTAME</h2>
+                <div class="subtitulo-seccion claro-txt">Envíame un mensaje ahora</div>
+                <div class="formulario">
+                    <form action="">
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Tema">
+                        <textarea name="" id="" cols="" rows="" placeholder="Mensaje"></textarea>
+                        <button>Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <canvas id="canvas"></canvas>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</body>
+
+</html>

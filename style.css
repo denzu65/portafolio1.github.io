@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.8;
+    font-family: "Roboto Slab", sans-serif;
+    background: url("img/bosquesito.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.glass {
+    background: rgba(56, 56, 57, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* ENCABEZADO */
+header {
+    background: rgba(56, 56, 57, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    top: 20px;
+    height: 7%;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    padding: 5px 0;
+}
+
+header nav {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav a {
+    font-size: 27px;
+    color: #f5eee3;
+    text-decoration: none;
+    width: 190px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #383a3c;
+}
+
+/* SECCION SOBRE MI */
+.sobremi {
+    background: #e6d0d000;
+    padding: 90px 0;
+    position: relative;
+    text-align: center;
+}
+
+.contenido-seccion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.titulo-seccion {
+    font-size: 90px;
+    text-transform: uppercase;
+    color: #043a70;
+    text-shadow: 1px 2px #fcfaf7, 3px 4px #0bb39a;
+}
+
+.subtitulo-seccion {
+    font-size: 23px;
+    margin: 20px 0;
+    color: #0bb39a;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.8);
+}
+
+.sobremi p {
+    font-size: 17px;
+    color: #0bb39a;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* SECCION LENGUAJES QUE USO */
+.lenguajes-uso {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.lenguajes-uso h3 {
+    font-size: 24px;
+    color: #0bb39a;
+    margin-bottom: 20px;
+}
+
+.iconos-lenguajes {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.iconos-lenguajes i {
+    font-size: 40px;
+    margin: 0 15px;
+    color: #040890;
+    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 5px rgba(0, 64, 255, 0.7),
+        0 0 10px rgba(234, 237, 203, 0.851);
+}
+
+.iconos-lenguajes i:hover {
+    color: #0bb39a;
+}
+
+.nombres-lenguajes {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.nombres-lenguajes div {
+    text-align: center;
+    margin: 0 15px;
+    font-size: 14px;
+    color: #0bb39a;
+}
+
+/* SECCION PORTFOLIO */
+.portfolio {
+    background: #e6886600;
+    padding: 30px 0;
+}
+
+.portfolio .contenido-seccion {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.portfolio .titulo-seccion {
+    text-align: center;
+}
+
+.portfolio .subtitulo-seccion {
+    text-align: center;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.item-producto {
+    background-color: #0bb39a;
+    padding: 3px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.item-producto img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.item-producto .info {
+    position: relative;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 36px;
+    color: #040890;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 5px rgba(0, 64, 255, 0.7),
+        0 0 10px rgba(234, 237, 203, 0.851);
+}
+
+.github-link:hover {
+    color: #0bb39a;
+}
+
+/* SECCION CONTACTO */
+.contacto {
+    background: #574c4c00;
+    padding: 30px 0;
+    color: #f6edd8;
+    text-align: center;
+}
+
+.claro-titulo {
+    text-shadow: 1px 2px #484a4d, 3px 4px #fcfaf7;
+}
+
+.contacto .formulario {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.contacto input,
+.contacto textarea {
+    font-weight: 400;
+    width: 100%;
+    padding: 8px;
+    color: #383a3c;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.contacto button {
+    display: inline-block;
+    padding: 4px 16px;
+    color: #383a3c;
+    background-color: #fcfaf7;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contacto h5 {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+/* SECCION RESPONSIVE */
+@media screen and (max-width: 740px) {
+    header nav a {
+        display: none;
+    }
+
+    header nav a[data-section="sobre-mi"] {
+        display: block;
+    }
+
+    .titulo-seccion {
+        font-size: 60px;
+    }
+
+    .subtitulo-seccion {
+        font-size: 20px;
+    }
+}
